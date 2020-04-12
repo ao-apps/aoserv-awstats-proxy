@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/awstats">
+  <Parameter name="com.aoindustries.aoserv.client.protocol" value="ssl"/>
+  <Parameter name="com.aoindustries.aoserv.client.hostname" value="master.aoindustries.com"/>
+  <Parameter name="com.aoindustries.aoserv.client.port" value="4583"/>
+  <Parameter name="com.aoindustries.aoserv.client.pool_size" value="8"/>
+  <Parameter name="com.aoindustries.aoserv.client.username" value=""/>
+  <Parameter name="com.aoindustries.aoserv.client.password" value=""/>
+  <Parameter description="If provided, only sites with this name will be available." name="com.aoindustries.awstats_proxy.site_name" value=""/>
+  <Parameter description="If provided, only sites on this server will be available.  Please note that combining this with a site_name will make only one site available." name="com.aoindustries.awstats_proxy.server" value=""/>
+</Context>
