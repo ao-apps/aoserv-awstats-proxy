@@ -37,6 +37,7 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2020-04-17T22:05:21-05:00"
+		dateModified="2020-04-17T23:00:29-05:00"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.aoindustries:aoserv-awstats-proxy:pom.version}" />
@@ -55,12 +56,16 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 				<ul>
 					<li>Project moved to GitHub and Maven.</li>
 					<li>Updated to Java EE 6 / Servlet 3.0.</li>
-					<!-- TODO:
-					<li>Make portable.</li>
-					<li>Update to HTML 5.</li>
-					<li>Encode URL.</li>
-					<li>ao-styles.</li>
-					-->
+					<li>Converted site listing page from servlet to JSP.
+						This resolves several issues:
+						<ol>
+							<li>Site now works in non-ROOT contexts (is portable).</li>
+							<li>Update to HTML 5.</li>
+							<li>Response encodes URLs.</li>
+							<li>Uses common styles from <core:link book="/ao-style" page="/index.jspx" />.</li>
+							<li>Added redirect back to site listing for unexpected paths.</li>
+						</ol>
+					</li>
 				</ul>
 			</changelog:release>
 		</c:if>

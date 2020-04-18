@@ -27,17 +27,15 @@ import com.aoindustries.aoserv.client.SSLConnector;
 import com.aoindustries.aoserv.client.TCPConnector;
 import com.aoindustries.aoserv.client.linux.User;
 import com.aoindustries.aoserv.client.web.Site;
-import static com.aoindustries.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
-import static com.aoindustries.encoding.TextInXhtmlEncoder.encodeTextInXhtml;
 import com.aoindustries.io.AOPool;
-import com.aoindustries.net.DomainName;
+import com.aoindustries.io.ContentType;
 import com.aoindustries.net.HostAddress;
 import com.aoindustries.net.Port;
 import com.aoindustries.net.Protocol;
+import com.aoindustries.servlet.http.Dispatcher;
 import com.aoindustries.validation.ValidationException;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
@@ -178,39 +176,10 @@ public class AWStatsProxy extends HttpServlet {
                     }
                 }
                 if(displayChoice) {
-                    response.setContentType("text/html"); // TODO: ContentType constant
-                    PrintWriter out = response.getWriter(); // TODO: ao-fluent-html
-					// TODO: html 5 (see admin project)
-                    out.print("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
-                            + "<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\" xml:lang=\"en\">\n"
-                            + "  <head><title>AWStats - Select Website</title></head>\n"
-                            + "  <body>\n"
-                            + "    <h2>Please select a website</h2>\n"
-					// TODO: ao-grid from ao-styles project
-                            + "    <table cellspacing='2' cellpadding='0'>\n"
-                            + "      <tr><th>Server</th><th>Primary Hostname</th><th>Directory</th></tr>\n");
-                    for(Site hs : sites) {
-                        DomainName hostname = hs.getLinuxServer().getHostname();
-                        out.print("      <tr>\n"
-                                + "        <td>");
-						encodeTextInXhtml(hostname.toString(), out);
-						out.print("</td>\n"
-                                + "        <td>");
-						encodeTextInXhtml(hs.getPrimaryHttpdSiteURL().getHostname().toString(), out);
-						out.print("</td>\n"
-                                + "        <td><a href='");
-						// TODO: response.encodeURL, and prefix contextPath for portability
-						encodeTextInXhtmlAttribute(hostname.toString(), out);
-						out.print('/');
-						encodeTextInXhtmlAttribute(hs.getName(), out);
-						out.print("/awstats.pl'>/www/");
-						encodeTextInXhtml(hs.getName(), out);
-						out.print("</a></td>\n"
-                                + "      </tr>\n");
-                    }
-                    out.print("    </table>\n"
-                            + "  </body>\n"
-                            + "</html>\n");
+					// Show site list
+					request.setAttribute("pathInfo", request.getPathInfo());
+					request.setAttribute("sites", sites);
+					Dispatcher.forward(context, "/index.jsp", request, response);
                     return;
                 }
             } else {
@@ -233,12 +202,12 @@ public class AWStatsProxy extends HttpServlet {
                 String contentType;
 				Charset charset;
                 if(path.endsWith(".pl")) {
-					contentType="text/html";
+					contentType = ContentType.HTML;
 					charset = StandardCharsets.UTF_8;
 				}
-                //else if(path.endsWith(".gif")) contentType="image/gif";
+				//else if(path.endsWith(".gif")) contentType=ContentType.GIF;
                 else if(path.endsWith(".png")) {
-					contentType="image/png";
+					contentType = ContentType.PNG;
 					charset = null;
 				} else {
                     response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Unsupported file extension in path");
