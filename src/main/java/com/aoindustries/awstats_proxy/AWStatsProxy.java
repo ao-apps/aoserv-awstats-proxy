@@ -1,3 +1,25 @@
+/*
+ * aoserv-awstats-proxy - Webapp that publishes AWStats reports from the AOServ Platform.
+ * Copyright (C) 2006-2020  AO Industries, Inc.
+ *     support@aoindustries.com
+ *     7262 Bull Pen Cir
+ *     Mobile, AL 36695
+ *
+ * This file is part of aoserv-awstats-proxy.
+ *
+ * aoserv-awstats-proxy is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * aoserv-awstats-proxy is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses/>.
+ */
 package com.aoindustries.awstats_proxy;
 
 import com.aoindustries.aoserv.client.AOServConnector;
@@ -23,6 +45,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -32,6 +55,7 @@ import javax.servlet.http.HttpServletResponse;
  * 
  * @author  AO Industries, Inc.
  */
+@WebServlet("/*")
 public class AWStatsProxy extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -43,15 +67,15 @@ public class AWStatsProxy extends HttpServlet {
 		try {
 			// Get the parameters
 			ServletContext context=getServletContext();
-			String protocol=context.getInitParameter("com.aoindustries.aoserv.client.protocol");
-			HostAddress hostname = HostAddress.valueOf(context.getInitParameter("com.aoindustries.aoserv.client.hostname"));
+			String protocol=context.getInitParameter("com.aoindustries.awstats_proxy.Connector.protocol");
+			HostAddress hostname = HostAddress.valueOf(context.getInitParameter("com.aoindustries.awstats_proxy.Connector.hostname"));
 			Port port = Port.valueOf(
-				Integer.parseInt(context.getInitParameter("com.aoindustries.aoserv.client.port")),
+				Integer.parseInt(context.getInitParameter("com.aoindustries.awstats_proxy.Connector.port")),
 				Protocol.TCP
 			);
-			int poolSize=Integer.parseInt(context.getInitParameter("com.aoindustries.aoserv.client.pool_size"));
-			User.Name username = User.Name.valueOf(context.getInitParameter("com.aoindustries.aoserv.client.username"));
-			String password=context.getInitParameter("com.aoindustries.aoserv.client.password");
+			int poolSize=Integer.parseInt(context.getInitParameter("com.aoindustries.awstats_proxy.Connector.pool_size"));
+			User.Name username = User.Name.valueOf(context.getInitParameter("com.aoindustries.awstats_proxy.Connector.username"));
+			String password=context.getInitParameter("com.aoindustries.awstats_proxy.Connector.password");
 
 			// Get the connector
 			if(protocol.equalsIgnoreCase("ssl")) {
@@ -154,13 +178,15 @@ public class AWStatsProxy extends HttpServlet {
                     }
                 }
                 if(displayChoice) {
-                    response.setContentType("text/html");
-                    PrintWriter out = response.getWriter();
+                    response.setContentType("text/html"); // TODO: ContentType constant
+                    PrintWriter out = response.getWriter(); // TODO: ao-fluent-html
+					// TODO: html 5 (see admin project)
                     out.print("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
                             + "<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\" xml:lang=\"en\">\n"
                             + "  <head><title>AWStats - Select Website</title></head>\n"
                             + "  <body>\n"
                             + "    <h2>Please select a website</h2>\n"
+					// TODO: ao-grid from ao-styles project
                             + "    <table cellspacing='2' cellpadding='0'>\n"
                             + "      <tr><th>Server</th><th>Primary Hostname</th><th>Directory</th></tr>\n");
                     for(Site hs : sites) {
@@ -173,6 +199,7 @@ public class AWStatsProxy extends HttpServlet {
 						encodeTextInXhtml(hs.getPrimaryHttpdSiteURL().getHostname().toString(), out);
 						out.print("</td>\n"
                                 + "        <td><a href='");
+						// TODO: response.encodeURL, and prefix contextPath for portability
 						encodeTextInXhtmlAttribute(hostname.toString(), out);
 						out.print('/');
 						encodeTextInXhtmlAttribute(hs.getName(), out);
