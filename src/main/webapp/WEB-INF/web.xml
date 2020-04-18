@@ -242,10 +242,14 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 	</servlet-mapping>
 	-->
 
-	<!-- The proxy is mapped to /*, so we have to be specific on what goes to JSP -->
+	<!-- The proxy is mapped to /*, so we have to be specific on what goes elsewhere -->
 	<servlet-mapping>
 		<servlet-name>jsp</servlet-name>
 		<url-pattern>/index.jsp</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>/ao-style/*</url-pattern>
 	</servlet-mapping>
 
 	<welcome-file-list>
