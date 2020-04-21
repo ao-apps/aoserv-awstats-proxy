@@ -124,7 +124,7 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 			</dependency>
 			<!-- Direct -->
 			<dependency>
-				<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId><version>4.1.0${POST-SNAPSHOT}</version>
+				<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId><version>4.2.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
 			</dependency>
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-net-types</artifactId><version>1.2.1${POST-SNAPSHOT}</version>
@@ -156,7 +156,7 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 				<groupId>com.aoindustries</groupId><artifactId>ao-mime-mappings</artifactId><version>1.0.0${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.aoindustries</groupId><artifactId>ao-servlet-filter</artifactId><version>2.1.0${POST-SNAPSHOT}</version>
+				<groupId>com.aoindustries</groupId><artifactId>ao-servlet-filter</artifactId><version>2.2.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
 			</dependency>
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-style</artifactId><version>1.0.0${POST-SNAPSHOT}</version>
@@ -184,7 +184,7 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 				<groupId>com.aoindustries</groupId><artifactId>ao-io-buffer</artifactId><version>3.2.0${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.aoindustries</groupId><artifactId>ao-servlet-last-modified</artifactId><version>1.0.0${POST-SNAPSHOT}</version>
+				<groupId>com.aoindustries</groupId><artifactId>ao-servlet-last-modified</artifactId><version>1.1.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
 			</dependency>
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-tempfiles-servlet</artifactId><version>1.1.0${POST-SNAPSHOT}</version>
