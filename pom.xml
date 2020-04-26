@@ -29,7 +29,7 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 		<relativePath>../../ao-oss-parent/pom.xml</relativePath>
 	</parent>
 
-	<groupId>com.aoindustries</groupId><artifactId>aoserv-awstats-proxy</artifactId><version>1.84.2-SNAPSHOT</version>
+	<groupId>com.aoindustries</groupId><artifactId>aoserv-awstats-proxy</artifactId><version>1.84.2</version>
 	<packaging>war</packaging>
 
 	<properties>
@@ -53,7 +53,7 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 		<connection>scm:git:git://github.com/aoindustries/aoserv-awstats-proxy.git</connection>
 		<developerConnection>scm:git:git@github.com:aoindustries/aoserv-awstats-proxy.git</developerConnection>
 		<url>https://github.com/aoindustries/aoserv-awstats-proxy</url>
-		<tag>HEAD</tag>
+		<tag>aoserv-awstats-proxy-1.84.2</tag>
 	</scm>
 
 	<issueManagement>
