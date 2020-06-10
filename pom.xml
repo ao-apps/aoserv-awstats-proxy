@@ -40,8 +40,6 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 		<!-- AWStats access -->
 		<com.aoindustries.aoserv.awstats.proxy.Connector.username />
 		<com.aoindustries.aoserv.awstats.proxy.Connector.password />
-		<!-- Dependencies -->
-		<commons-lang3.version>3.10</commons-lang3.version>
 	</properties>
 
 	<name>AOServ AWStats Proxy</name>
@@ -179,7 +177,7 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 				<groupId>com.aoindustries</groupId><artifactId>ao-tlds</artifactId><version>1.1.3${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.apache.commons</groupId><artifactId>commons-lang3</artifactId><version>${commons-lang3.version}</version>
+				<groupId>org.apache.commons</groupId><artifactId>commons-lang3</artifactId><version>3.10</version>
 			</dependency>
 			<!-- Runtime Direct -->
 			<dependency>
