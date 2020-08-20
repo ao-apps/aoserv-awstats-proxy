@@ -266,6 +266,10 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 	<error-page />
 	-->
 
+	<!-- No external resources:
+	<resource-ref />
+	-->
+
 	<!-- No security constraints:
 	<security-constraint />
 	<login-config />
