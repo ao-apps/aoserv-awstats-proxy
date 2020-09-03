@@ -41,6 +41,8 @@ import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -58,7 +60,9 @@ public class AWStatsProxy extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 
-    /**
+	private static final Logger logger = Logger.getLogger(AWStatsProxy.class.getName());
+
+	/**
      * Gets the AOServConnector for this application.
      */
     private AOServConnector getAOServConnector() throws IOException {
@@ -128,7 +132,7 @@ public class AWStatsProxy extends HttpServlet {
                     && (server==null || server.length()==0 || server.equals(site.getLinuxServer().getHostname().toString()))
                 ) {
                     sites.add(site);
-                    System.err.println("DEBUG: AWStatsProxy: Found matching site: "+site);
+					logger.log(Level.FINE, "DEBUG: AWStatsProxy: Found matching site: {0}", site);
                 }
             }
 
@@ -193,7 +197,9 @@ public class AWStatsProxy extends HttpServlet {
             } else {
 				assert site != null;
                 // Strip beginning slashes
-                while(path.length()>0 && path.charAt(0)=='/') path=path.substring(1);
+                while(path.length()>0 && path.charAt(0)=='/') {
+					path = path.substring(1);
+				}
                 if(path.length()==0) path="awstats.pl";
 
                 String queryString=request.getQueryString();
