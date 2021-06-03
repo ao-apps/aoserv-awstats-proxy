@@ -1,6 +1,6 @@
 <%--
 aoserv-awstats-proxy - Webapp that publishes AWStats reports from the AOServ Platform.
-Copyright (C) 2020  AO Industries, Inc.
+Copyright (C) 2020, 2021  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -28,7 +28,7 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 %><%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"
 %><%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"
 %><%-- AO Taglib
---%><%@ taglib prefix="ao" uri="https://aoindustries.com/ao-taglib/"
+--%><%@ taglib prefix="ao" uri="https://oss.aoapps.com/taglib/"
 %><%-- AO Web Resources Taglib
---%><%@ taglib prefix="wr" uri="https://aoindustries.com/ao-web-resources/taglib/"
+--%><%@ taglib prefix="wr" uri="https://oss.aoapps.com/web-resources/taglib/"
 %>
