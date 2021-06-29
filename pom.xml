@@ -33,6 +33,7 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 	<packaging>war</packaging>
 
 	<properties>
+		<module.name>com.aoindustries.awstats_proxy</module.name>
 		<javadoc.breadcrumbs><![CDATA[<a target="${javadoc.target}" href="https://aoindustries.com/aoserv/">AOServ</a>
 / <a target="${javadoc.target}" href="${project.url}">AWStats Proxy</a>]]></javadoc.breadcrumbs>
 		<description.html><![CDATA[Webapp that publishes <a target="${javadoc.target}" href="https://awstats.sourceforge.io/">AWStats</a> reports from the <a target="${javadoc.target}" href="https://aoindustries.com/aoserv/">AOServ Platform</a>.]]></description.html>
@@ -207,6 +208,34 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 									<location>${project.build.directory}/offlineLinks/com/aoapps/javadoc/offline/javaee/${javaee.version}</location>
 								</offlineLink>
 							</offlineLinks>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>release</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId><artifactId>maven-war-plugin</artifactId>
+						<configuration>
+							<!--
+								Releases use "Automatic-Module-Name" instead of "module-info.java"
+								since has direct dependencies that are not yet modularized.
+							-->
+							<archive>
+								<manifestEntries>
+									<Automatic-Module-Name>${module.name}</Automatic-Module-Name>
+								</manifestEntries>
+							</archive>
+							<packagingExcludes>
+								<!-- META-INF/context.xml is used for local development deployment only -->
+								META-INF/context.xml,
+								WEB-INF/classes/module-info.class
+							</packagingExcludes>
+							<!-- There is no way to exclude module-info.class from secondary artifact, just don't attach -->
+							<attachClasses>false</attachClasses>
 						</configuration>
 					</plugin>
 				</plugins>
