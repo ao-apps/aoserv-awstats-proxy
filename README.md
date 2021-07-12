@@ -7,6 +7,8 @@
 [![java ee: &gt;= 7](https://aoindustries.com/ao-badges/javaee-7.svg)](https://docs.oracle.com/javaee/7/api/)
 [![license: LGPL v3](https://aoindustries.com/ao-badges/license-lgpl-3.0.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
+[![Build](https://github.com/aoindustries/aoserv-awstats-proxy/workflows/Build/badge.svg?branch=master)](https://github.com/aoindustries/aoserv-awstats-proxy/actions?query=workflow%3ABuild)
+
 Webapp that publishes [AWStats](https://awstats.sourceforge.io/) reports from the [AOServ Platform](https://aoindustries.com/aoserv/).
 
 ## Project Links
