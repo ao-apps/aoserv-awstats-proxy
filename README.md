@@ -9,6 +9,12 @@
 
 [![Build](https://github.com/aoindustries/aoserv-awstats-proxy/workflows/Build/badge.svg?branch=master)](https://github.com/aoindustries/aoserv-awstats-proxy/actions?query=workflow%3ABuild)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.aoindustries/aoserv-awstats-proxy/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.aoindustries/aoserv-awstats-proxy)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=alert_status)](https://sonarcloud.io/dashboard?branch=master&id=com.aoapps.platform%3Aaoapps-awstats-proxy)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=ncloc)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=ncloc)  
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=reliability_rating)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=Reliability)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=security_rating)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=Security)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=sqale_rating)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=Maintainability)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=coverage)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=Coverage)
 
 Webapp that publishes [AWStats](https://awstats.sourceforge.io/) reports from the [AOServ Platform](https://aoindustries.com/aoserv/).
 
