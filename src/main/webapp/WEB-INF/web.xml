@@ -258,13 +258,11 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 	</servlet-mapping>
 
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
-		<welcome-file>index.htm</welcome-file>
+		<!-- index.jspx before index.html for apidocs views -->
 		<welcome-file>index.jspx</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
-		<!-- No Struts:
-		<welcome-file>index.do</welcome-file>
-		-->
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
 	</welcome-file-list>
 
 	<!-- No custom error pages:
