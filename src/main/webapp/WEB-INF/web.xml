@@ -253,6 +253,10 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 		<url-pattern>/index.jsp</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
+		<servlet-name>jsp</servlet-name>
+		<url-pattern>/WEB-INF/ao-error-pages/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
 		<servlet-name>default</servlet-name>
 		<url-pattern>/ao-style/*</url-pattern>
 	</servlet-mapping>
@@ -265,9 +269,8 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 		<welcome-file>index.htm</welcome-file>
 	</welcome-file-list>
 
-	<!-- No custom error pages:
-	<error-page />
-	-->
+	<!-- Error Pages -->
+	<!-- Using error pages from ao-error-pages:/META-INF/web-fragment.xml -->
 
 	<!-- No external resources:
 	<resource-ref />

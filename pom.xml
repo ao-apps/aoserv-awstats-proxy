@@ -123,6 +123,7 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 						<dependency>com.aoapps:ao-web-resources-taglib</dependency>
 						<dependency>org.apache.taglibs:taglibs-standard-spec</dependency>
 						<!-- Runtime Direct -->
+						<dependency>com.aoapps:ao-error-pages</dependency>
 						<dependency>com.aoapps:ao-mime-mappings</dependency>
 						<dependency>com.aoapps:ao-servlet-filter</dependency>
 						<dependency>com.aoapps:ao-style</dependency>
@@ -337,6 +338,9 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 			</dependency>
 			<!-- Runtime Direct -->
 			<dependency>
+				<groupId>com.aoapps</groupId><artifactId>ao-error-pages</artifactId><version>1.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+			</dependency>
+			<dependency>
 				<groupId>com.aoapps</groupId><artifactId>ao-mime-mappings</artifactId><version>1.2.0${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
@@ -385,6 +389,10 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 			<groupId>org.apache.taglibs</groupId><artifactId>taglibs-standard-spec</artifactId>
 		</dependency>
 		<!-- Runtime Direct -->
+		<dependency>
+			<groupId>com.aoapps</groupId><artifactId>ao-error-pages</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 		<dependency>
 			<!-- Required for UTF-8 static resources -->
 			<groupId>com.aoapps</groupId><artifactId>ao-mime-mappings</artifactId>

@@ -32,7 +32,7 @@ import com.aoapps.servlet.http.Dispatcher;
 import com.aoindustries.aoserv.client.AOServConnector;
 import com.aoindustries.aoserv.client.SSLConnector;
 import com.aoindustries.aoserv.client.TCPConnector;
-import com.aoindustries.aoserv.client.linux.User;
+import com.aoindustries.aoserv.client.account.User;
 import com.aoindustries.aoserv.client.web.Site;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -52,7 +52,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Provides access to AWStats files.
- * 
+ *
  * @author  AO Industries, Inc.
  */
 @WebServlet("/*")
