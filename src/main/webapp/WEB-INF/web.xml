@@ -105,11 +105,11 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 
 	<session-config>
 		<session-timeout>61</session-timeout>
-		<!-- Block any servlet container URL rewriting -->
 		<cookie-config>
 			<http-only>true</http-only>
-			<!-- <secure>true</secure> -->
+			<secure>@{session.cookie.secure}</secure>
 		</cookie-config>
+		<!-- Block any servlet container URL rewriting -->
 		<tracking-mode>COOKIE</tracking-mode>
 	</session-config>
 

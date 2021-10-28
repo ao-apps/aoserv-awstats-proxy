@@ -50,6 +50,8 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<!-- TODO: Implement tests -->
 		<sonar.coverage.exclusions>**.*</sonar.coverage.exclusions>
+		<!-- Require secure session cookies in production -->
+		<session.cookie.secure>true</session.cookie.secure>
 	</properties>
 
 	<name>AOServ AWStats Proxy</name>
@@ -136,6 +138,14 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 	</build>
 
 	<profiles>
+		<profile>
+			<!-- Features only enabled during development time -->
+			<id>development</id>
+			<properties>
+				<!-- Allow unsecure session cookies in development -->
+				<session.cookie.secure>false</session.cookie.secure>
+			</properties>
+		</profile>
 		<profile>
 			<id>offlineLinks</id><activation><file><exists>src/main/java</exists></file></activation>
 			<build>

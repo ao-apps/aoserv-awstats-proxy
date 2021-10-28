@@ -37,7 +37,7 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2020-04-17T22:05:21-05:00"
-		dateModified="2021-10-26T22:28:21-05:00"
+		dateModified="2021-10-28T02:26:31-05:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -55,6 +55,7 @@ along with aoserv-awstats-proxy.  If not, see <http://www.gnu.org/licenses />.
 						pages from direct access.
 					</li>
 					<li>Added error handlers using new <ao:a href="https://oss.aoapps.com/error-pages/">AO Error Pages</ao:a> project.</li>
+					<li>Require secure session cookies in production.</li>
 				</ul>
 			</changelog:release>
 		</c:if>
