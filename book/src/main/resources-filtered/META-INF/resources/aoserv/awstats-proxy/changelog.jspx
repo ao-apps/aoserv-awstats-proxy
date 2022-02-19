@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 aoserv-awstats-proxy - Webapp that publishes AWStats reports from the AOServ Platform.
-Copyright (C) 2020, 2021  AO Industries, Inc.
+Copyright (C) 2020, 2021, 2022  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -37,7 +37,7 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2020-04-17T22:05:21-05:00"
-		dateModified="2021-10-28T02:26:31-05:00"
+		dateModified="2022-02-18T20:52:20-06:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -47,18 +47,27 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
 				artifactId="@{documented.artifactId}"
 				repository="@{nexusUrl}content/repositories/snapshots/"
 				scmUrl="@{project.scm.url}"
-			>
-				<ul>
-					<li>
-						No longer hiding <code>*.jspx</code> or <code>*.jsp</code> extensions for resources within
-						<code>/WEB-INF/*</code>.  This is to help interoperability with frameworks that hide their JSP
-						pages from direct access.
-					</li>
-					<li>Added error handlers using new <ao:a href="https://oss.aoapps.com/error-pages/">AO Error Pages</ao:a> project.</li>
-					<li>Require secure session cookies in production.</li>
-				</ul>
-			</changelog:release>
+			/>
 		</c:if>
+
+		<changelog:release
+			projectName="@{documented.name}"
+			version="1.89.0"
+			datePublished="2022-02-18T20:52:20-06:00"
+			groupId="@{project.groupId}"
+			artifactId="@{documented.artifactId}"
+			scmUrl="@{project.scm.url}"
+		>
+			<ul>
+				<li>
+					No longer hiding <code>*.jspx</code> or <code>*.jsp</code> extensions for resources within
+					<code>/WEB-INF/*</code>.  This is to help interoperability with frameworks that hide their JSP
+					pages from direct access.
+				</li>
+				<li>Added error handlers using new <ao:a href="https://oss.aoapps.com/error-pages/">AO Error Pages</ao:a> project.</li>
+				<li>Require secure session cookies in production.</li>
+			</ul>
+		</changelog:release>
 
 		<changelog:release
 			projectName="@{documented.name}"
