@@ -69,46 +69,46 @@ public class AWStatsProxy extends HttpServlet {
   private AOServConnector getAOServConnector() throws IOException {
     try {
       // Get the parameters
-      ServletContext context=getServletContext();
-      String protocol=context.getInitParameter("com.aoindustries.awstats_proxy.Connector.protocol");
+      ServletContext context = getServletContext();
+      String protocol = context.getInitParameter("com.aoindustries.awstats_proxy.Connector.protocol");
       HostAddress hostname = HostAddress.valueOf(context.getInitParameter("com.aoindustries.awstats_proxy.Connector.hostname"));
       Port port = Port.valueOf(
-        Integer.parseInt(context.getInitParameter("com.aoindustries.awstats_proxy.Connector.port")),
-        Protocol.TCP
+          Integer.parseInt(context.getInitParameter("com.aoindustries.awstats_proxy.Connector.port")),
+          Protocol.TCP
       );
-      int poolSize=Integer.parseInt(context.getInitParameter("com.aoindustries.awstats_proxy.Connector.pool_size"));
+      int poolSize = Integer.parseInt(context.getInitParameter("com.aoindustries.awstats_proxy.Connector.pool_size"));
       User.Name username = User.Name.valueOf(context.getInitParameter("com.aoindustries.awstats_proxy.Connector.username"));
-      String password=context.getInitParameter("com.aoindustries.awstats_proxy.Connector.password");
+      String password = context.getInitParameter("com.aoindustries.awstats_proxy.Connector.password");
 
       // Get the connector
       if (protocol.equalsIgnoreCase("ssl")) {
         return SSLConnector.getSSLConnector(
-          hostname,
-          null,
-          port,
-          username,
-          username,
-          password,
-          null,
-          poolSize,
-          AOPool.DEFAULT_MAX_CONNECTION_AGE,
-          null,
-          null
+            hostname,
+            null,
+            port,
+            username,
+            username,
+            password,
+            null,
+            poolSize,
+            AOPool.DEFAULT_MAX_CONNECTION_AGE,
+            null,
+            null
         );
       } else if (protocol.equalsIgnoreCase("tcp")) {
         return TCPConnector.getTCPConnector(
-          hostname,
-          null,
-          port,
-          username,
-          username,
-          password,
-          null,
-          poolSize,
-          AOPool.DEFAULT_MAX_CONNECTION_AGE
+            hostname,
+            null,
+            port,
+            username,
+            username,
+            password,
+            null,
+            poolSize,
+            AOPool.DEFAULT_MAX_CONNECTION_AGE
         );
       } else {
-        throw new IllegalArgumentException("Unexpected protocol: "+protocol);
+        throw new IllegalArgumentException("Unexpected protocol: " + protocol);
       }
     } catch (ValidationException e) {
       throw new IOException(e);
@@ -117,22 +117,22 @@ public class AWStatsProxy extends HttpServlet {
 
   @Override
   public void doGet(
-    HttpServletRequest request,
-    HttpServletResponse response
+      HttpServletRequest request,
+      HttpServletResponse response
   ) throws IOException, ServletException {
     try {
       // Get the connection to the master server
-      AOServConnector conn=getAOServConnector();
+      AOServConnector conn = getAOServConnector();
 
       // Resolve the list of possible websites
-      ServletContext context=getServletContext();
-      String site_name=context.getInitParameter("com.aoindustries.awstats_proxy.site_name");
-      String server=context.getInitParameter("com.aoindustries.awstats_proxy.server");
+      ServletContext context = getServletContext();
+      String site_name = context.getInitParameter("com.aoindustries.awstats_proxy.site_name");
+      String server = context.getInitParameter("com.aoindustries.awstats_proxy.server");
       List<Site> sites = new ArrayList<>();
       for (Site site : conn.getWeb().getSite().getRows()) {
         if (
-          (site_name == null || site_name.length() == 0 || site_name.equals(site.getName()))
-          && (server == null || server.length() == 0 || server.equals(site.getLinuxServer().getHostname().toString()))
+            (site_name == null || site_name.length() == 0 || site_name.equals(site.getName()))
+                && (server == null || server.length() == 0 || server.equals(site.getLinuxServer().getHostname().toString()))
         ) {
           sites.add(site);
           logger.log(Level.FINE, "DEBUG: AWStatsProxy: Found matching site: {0}", site);
@@ -146,41 +146,41 @@ public class AWStatsProxy extends HttpServlet {
       }
 
       // If there is more than one possible website and there is currently no website selected, display site list
-      Site site=null;
-      String path=null;
-      if (sites.size()>1) {
+      Site site = null;
+      String path = null;
+      if (sites.size() > 1) {
         // More than one choice, allow user to select which one
 
         // Parse values
-        boolean displayChoice=true;
-        String url=request.getPathInfo();
+        boolean displayChoice = true;
+        String url = request.getPathInfo();
         if (
-          url != null && url.length()>0
+            url != null && url.length() > 0
         ) {
           if (url.charAt(0) == '/') {
-            url=url.substring(1);
+            url = url.substring(1);
           }
-          int pos=url.indexOf('/');
+          int pos = url.indexOf('/');
           if (pos != -1) {
-            String selectedServer=url.substring(0, pos);
-            int pos2=url.indexOf('/', pos+1);
+            String selectedServer = url.substring(0, pos);
+            int pos2 = url.indexOf('/', pos + 1);
             if (pos2 != -1) {
-              String selectedSiteName=url.substring(pos+1, pos2);
-              path=url.substring(pos2+1);
+              String selectedSiteName = url.substring(pos + 1, pos2);
+              path = url.substring(pos2 + 1);
 
               // Find matching site
-              site=null;
+              site = null;
               for (Site ts : sites) {
                 if (ts.getName().equals(selectedSiteName) && ts.getLinuxServer().getHostname().toString().equals(selectedServer)) {
-                  site=ts;
+                  site = ts;
                   break;
                 }
               }
               if (site == null) {
-                response.sendError(HttpServletResponse.SC_NOT_FOUND, "Unable to find Site: "+selectedSiteName+" on " + selectedServer);
+                response.sendError(HttpServletResponse.SC_NOT_FOUND, "Unable to find Site: " + selectedSiteName + " on " + selectedServer);
                 return;
               }
-              displayChoice=false;
+              displayChoice = false;
             }
           }
         }
@@ -192,8 +192,8 @@ public class AWStatsProxy extends HttpServlet {
           return;
         }
       } else {
-        site=sites.get(0);
-        path=request.getPathInfo();
+        site = sites.get(0);
+        path = request.getPathInfo();
       }
 
       if (path == null) {
@@ -202,14 +202,14 @@ public class AWStatsProxy extends HttpServlet {
       } else {
         assert site != null;
         // Strip beginning slashes
-        while (path.length()>0 && path.charAt(0) == '/') {
+        while (path.length() > 0 && path.charAt(0) == '/') {
           path = path.substring(1);
         }
         if (path.length() == 0) {
-          path="awstats.pl";
+          path = "awstats.pl";
         }
 
-        String queryString=request.getQueryString();
+        String queryString = request.getQueryString();
 
         // Determine content type
         String contentType;
@@ -217,8 +217,8 @@ public class AWStatsProxy extends HttpServlet {
         if (path.endsWith(".pl")) {
           contentType = ContentType.HTML;
           charset = StandardCharsets.UTF_8;
-        //} else if (path.endsWith(".gif")) {
-        //  contentType=ContentType.GIF;
+          //} else if (path.endsWith(".gif")) {
+          //  contentType=ContentType.GIF;
         } else if (path.endsWith(".png")) {
           contentType = ContentType.PNG;
           charset = null;
