@@ -81,7 +81,7 @@ public class AWStatsProxy extends HttpServlet {
       String password = context.getInitParameter("com.aoindustries.awstats_proxy.Connector.password");
 
       // Get the connector
-      if (protocol.equalsIgnoreCase("ssl")) {
+      if ("ssl".equalsIgnoreCase(protocol)) {
         return SSLConnector.getSSLConnector(
             hostname,
             null,
@@ -95,7 +95,7 @@ public class AWStatsProxy extends HttpServlet {
             null,
             null
         );
-      } else if (protocol.equalsIgnoreCase("tcp")) {
+      } else if ("tcp".equalsIgnoreCase(protocol)) {
         return TCPConnector.getTCPConnector(
             hostname,
             null,
