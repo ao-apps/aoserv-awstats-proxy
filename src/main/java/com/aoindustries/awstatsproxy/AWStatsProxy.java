@@ -21,7 +21,7 @@
  * along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package com.aoindustries.awstats_proxy;
+package com.aoindustries.awstatsproxy;
 
 import com.aoapps.hodgepodge.io.AOPool;
 import com.aoapps.lang.io.ContentType;
@@ -30,9 +30,9 @@ import com.aoapps.net.HostAddress;
 import com.aoapps.net.Port;
 import com.aoapps.net.Protocol;
 import com.aoapps.servlet.http.Dispatcher;
-import com.aoindustries.aoserv.client.AOServConnector;
-import com.aoindustries.aoserv.client.SSLConnector;
-import com.aoindustries.aoserv.client.TCPConnector;
+import com.aoindustries.aoserv.client.AoservConnector;
+import com.aoindustries.aoserv.client.SslConnector;
+import com.aoindustries.aoserv.client.TcpConnector;
 import com.aoindustries.aoserv.client.account.User;
 import com.aoindustries.aoserv.client.web.Site;
 import java.io.IOException;
@@ -64,25 +64,25 @@ public class AWStatsProxy extends HttpServlet {
   private static final Logger logger = Logger.getLogger(AWStatsProxy.class.getName());
 
   /**
-   * Gets the AOServConnector for this application.
+   * Gets the AoservConnector for this application.
    */
-  private AOServConnector getAOServConnector() throws IOException {
+  private AoservConnector getAoservConnector() throws IOException {
     try {
       // Get the parameters
       ServletContext context = getServletContext();
-      String protocol = context.getInitParameter("com.aoindustries.awstats_proxy.Connector.protocol");
-      HostAddress hostname = HostAddress.valueOf(context.getInitParameter("com.aoindustries.awstats_proxy.Connector.hostname"));
+      String protocol = context.getInitParameter("com.aoindustries.awstatsproxy.Connector.protocol");
+      HostAddress hostname = HostAddress.valueOf(context.getInitParameter("com.aoindustries.awstatsproxy.Connector.hostname"));
       Port port = Port.valueOf(
-          Integer.parseInt(context.getInitParameter("com.aoindustries.awstats_proxy.Connector.port")),
+          Integer.parseInt(context.getInitParameter("com.aoindustries.awstatsproxy.Connector.port")),
           Protocol.TCP
       );
-      int poolSize = Integer.parseInt(context.getInitParameter("com.aoindustries.awstats_proxy.Connector.pool_size"));
-      User.Name username = User.Name.valueOf(context.getInitParameter("com.aoindustries.awstats_proxy.Connector.username"));
-      String password = context.getInitParameter("com.aoindustries.awstats_proxy.Connector.password");
+      int poolSize = Integer.parseInt(context.getInitParameter("com.aoindustries.awstatsproxy.Connector.pool_size"));
+      User.Name username = User.Name.valueOf(context.getInitParameter("com.aoindustries.awstatsproxy.Connector.username"));
+      String password = context.getInitParameter("com.aoindustries.awstatsproxy.Connector.password");
 
       // Get the connector
       if ("ssl".equalsIgnoreCase(protocol)) {
-        return SSLConnector.getSSLConnector(
+        return SslConnector.getSslConnector(
             hostname,
             null,
             port,
@@ -96,7 +96,7 @@ public class AWStatsProxy extends HttpServlet {
             null
         );
       } else if ("tcp".equalsIgnoreCase(protocol)) {
-        return TCPConnector.getTCPConnector(
+        return TcpConnector.getTcpConnector(
             hostname,
             null,
             port,
@@ -122,16 +122,16 @@ public class AWStatsProxy extends HttpServlet {
   ) throws IOException, ServletException {
     try {
       // Get the connection to the master server
-      AOServConnector conn = getAOServConnector();
+      AoservConnector conn = getAoservConnector();
 
       // Resolve the list of possible websites
       ServletContext context = getServletContext();
-      String site_name = context.getInitParameter("com.aoindustries.awstats_proxy.site_name");
-      String server = context.getInitParameter("com.aoindustries.awstats_proxy.server");
+      String siteName = context.getInitParameter("com.aoindustries.awstatsproxy.site_name");
+      String server = context.getInitParameter("com.aoindustries.awstatsproxy.server");
       List<Site> sites = new ArrayList<>();
       for (Site site : conn.getWeb().getSite().getRows()) {
         if (
-            (site_name == null || site_name.length() == 0 || site_name.equals(site.getName()))
+            (siteName == null || siteName.length() == 0 || siteName.equals(site.getName()))
                 && (server == null || server.length() == 0 || server.equals(site.getLinuxServer().getHostname().toString()))
         ) {
           sites.add(site);
@@ -233,7 +233,7 @@ public class AWStatsProxy extends HttpServlet {
           response.setCharacterEncoding(charset.name());
         }
         try (OutputStream out = response.getOutputStream()) {
-          site.getAWStatsFile(path, queryString, out);
+          site.getAwstatsFile(path, queryString, out);
         }
       }
     } catch (SQLException err) {

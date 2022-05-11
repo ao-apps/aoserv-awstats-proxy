@@ -27,13 +27,13 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
 
   <!-- AWStats access -->
   <Parameter
-    name="com.aoindustries.awstats_proxy.Connector.username"
-    value="@{com.aoindustries.awstats_proxy.Connector.username}"
+    name="com.aoindustries.awstatsproxy.Connector.username"
+    value="@{com.aoindustries.awstatsproxy.Connector.username}"
     override="false"
   />
   <Parameter
-    name="com.aoindustries.awstats_proxy.Connector.password"
-    value="@{com.aoindustries.awstats_proxy.Connector.password}"
+    name="com.aoindustries.awstatsproxy.Connector.password"
+    value="@{com.aoindustries.awstatsproxy.Connector.password}"
     override="false"
   />
 

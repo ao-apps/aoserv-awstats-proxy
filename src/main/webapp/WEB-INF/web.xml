@@ -32,34 +32,34 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
 
   <!-- AWStats access -->
   <context-param>
-    <param-name>com.aoindustries.awstats_proxy.Connector.protocol</param-name>
+    <param-name>com.aoindustries.awstatsproxy.Connector.protocol</param-name>
     <param-value>ssl</param-value>
   </context-param>
   <context-param>
-    <param-name>com.aoindustries.awstats_proxy.Connector.hostname</param-name>
+    <param-name>com.aoindustries.awstatsproxy.Connector.hostname</param-name>
     <param-value>master.aoindustries.com</param-value>
   </context-param>
   <context-param>
-    <param-name>com.aoindustries.awstats_proxy.Connector.port</param-name>
+    <param-name>com.aoindustries.awstatsproxy.Connector.port</param-name>
     <param-value>4583</param-value>
   </context-param>
   <context-param>
-    <param-name>com.aoindustries.awstats_proxy.Connector.pool_size</param-name>
+    <param-name>com.aoindustries.awstatsproxy.Connector.pool_size</param-name>
     <param-value>8</param-value>
   </context-param>
   <context-param>
-    <param-name>com.aoindustries.awstats_proxy.Connector.username</param-name>
+    <param-name>com.aoindustries.awstatsproxy.Connector.username</param-name>
     <param-value />
   </context-param>
   <context-param>
-    <param-name>com.aoindustries.awstats_proxy.Connector.password</param-name>
+    <param-name>com.aoindustries.awstatsproxy.Connector.password</param-name>
     <param-value />
   </context-param>
 
   <!-- Site selection -->
   <context-param>
     <description>If provided, only sites with this name will be available.</description>
-    <param-name>com.aoindustries.awstats_proxy.site_name</param-name>
+    <param-name>com.aoindustries.awstatsproxy.site_name</param-name>
     <param-value />
   </context-param>
   <context-param>
@@ -67,7 +67,7 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
       If provided, only sites on this server will be available.
       Please note that combining this with a site_name will make only one site available.
     </description>
-    <param-name>com.aoindustries.awstats_proxy.server</param-name>
+    <param-name>com.aoindustries.awstatsproxy.server</param-name>
     <param-value />
   </context-param>
 

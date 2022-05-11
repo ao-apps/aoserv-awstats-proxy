@@ -51,7 +51,7 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
               <c:out value="${server}" />
             </td>
             <td style="white-space:nowrap">
-              <c:out value="${site.primaryHttpdSiteURL.hostname}" />
+              <c:out value="${site.primaryVirtualHostName.hostname}" />
             </td>
             <td style="white-space:nowrap">
               <ao:a href="/${ao:encodeURIComponent(server)}/${ao:encodeURIComponent(site.name)}/awstats.pl">

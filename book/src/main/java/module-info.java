@@ -20,7 +20,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
  */
-module com.aoindustries.awstats_proxy.book {
+module com.aoindustries.awstatsproxy.book {
   // Direct
   requires com.aoapps.badges; // <groupId>com.aoapps</groupId><artifactId>ao-badges</artifactId>
   requires com.aoapps.taglib; // <groupId>com.aoapps</groupId><artifactId>ao-taglib</artifactId>
