@@ -249,9 +249,10 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
                 </manifestEntries>
               </archive>
               <packagingExcludes>
-                <!-- META-INF/context.xml is used for local development deployment only -->
-                META-INF/context.xml,
-                WEB-INF/classes/module-info.class
+                <!-- Default Excludes -->
+                META-INF/context.xml
+                <!-- Exclude module-info due to named dependencies-->
+                ,WEB-INF/classes/module-info.class
               </packagingExcludes>
               <!-- There is no way to exclude module-info.class from secondary artifact, just don't attach -->
               <attachClasses>false</attachClasses>
