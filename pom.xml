@@ -250,7 +250,7 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
               </archive>
               <packagingExcludes>
                 <!-- Default Excludes -->
-                META-INF/context.xml
+                ${maven-war-plugin.packagingExcludes.default}
                 <!-- Exclude module-info due to named dependencies-->
                 ,WEB-INF/classes/module-info.class
               </packagingExcludes>
