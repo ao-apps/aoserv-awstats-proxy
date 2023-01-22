@@ -1,6 +1,6 @@
 <%--
 aoserv-awstats-proxy - Webapp that publishes AWStats reports from the AOServ Platform.
-Copyright (C) 2020, 2022  AO Industries, Inc.
+Copyright (C) 2020, 2022, 2023  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -22,7 +22,7 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
 --%>
 <%@ page language="java" pageEncoding="UTF-8" %>
 <%@ page session="false" %>
-<%@ include file="/WEB-INF/taglibs.jsp" %>
+<%@ include file="/WEB-INF/taglibs.jspf" %>
 <c:if test="${requestScope.pathInfo != '/'}">
   <%-- Redirect to expected listing URL --%>
   <ao:redirect statusCode="301" href="/" />
