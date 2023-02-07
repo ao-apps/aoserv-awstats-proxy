@@ -354,7 +354,7 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
       </dependency>
       <!-- Runtime Direct -->
       <dependency>
-        <groupId>com.aoapps</groupId><artifactId>ao-error-pages</artifactId><version>1.0.1-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.aoapps</groupId><artifactId>ao-error-pages</artifactId><version>1.0.1${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
         <groupId>com.aoapps</groupId><artifactId>ao-mime-mappings</artifactId><version>1.2.0${POST-SNAPSHOT}</version>
