@@ -39,5 +39,6 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="API Docs"
     datePublished="2020-04-17T22:05:21-05:00"
     dateModified="${ao:getLastModified('index.html')}"
+    allowRobots="false"
   />
 </jsp:root>
