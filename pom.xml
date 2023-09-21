@@ -38,7 +38,7 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
     <module.name>com.aoindustries.awstatsproxy</module.name>
     <javadoc.breadcrumbs><![CDATA[<a target="${javadoc.target}" href="https://aoindustries.com/aoserv/">AOServ</a>
 / <a target="${javadoc.target}" href="${project.url}">AWStats Proxy</a>]]></javadoc.breadcrumbs>
-    
+
     <description.html><![CDATA[Webapp that publishes <a target="${javadoc.target}" href="https://awstats.sourceforge.io/">AWStats</a> reports from the <a target="${javadoc.target}" href="https://aoindustries.com/aoserv/">AOServ Platform</a>.]]></description.html>
     <!-- AWStats access -->
     <com.aoindustries.aoserv.awstats.proxy.Connector.username />
