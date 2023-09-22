@@ -43,8 +43,6 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
     <!-- AWStats access -->
     <com.aoindustries.aoserv.awstats.proxy.Connector.username />
     <com.aoindustries.aoserv.awstats.proxy.Connector.password />
-    <!-- TODO: Remove once moved to platform.aoapps.com -->
-    <google.analytics.trackingId>UA-86871646-1</google.analytics.trackingId>
     <!-- com.aoindustries is on original Sonatype Nexus Repository Manager -->
     <nexusUrl>https://oss.sonatype.org/</nexusUrl>
     <!-- SonarQube -->
