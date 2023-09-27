@@ -30,10 +30,13 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
 <ao:html>
   <head>
     <ao:meta charset="${pageContext.response.characterEncoding}" />
+    <wr:renderScripts position="HEAD_START" />
     <title>AWStats - Select Website</title>
     <wr:renderStyles />
+    <wr:renderScripts position="HEAD_END" />
   </head>
   <body>
+    <wr:renderScripts position="BODY_START" />
     <h2>Please select a website</h2>
     <table class="ao-outside-border">
       <thead>
@@ -62,5 +65,6 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
         </c:forEach>
       </tbody>
     </table>
+    <wr:renderScripts position="BODY_END" />
   </body>
 </ao:html>

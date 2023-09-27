@@ -37,7 +37,7 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2020-04-17T22:05:21-05:00"
-    dateModified="2022-05-17T01:55:00-05:00"
+    dateModified="2023-09-26T19:00:16Z"
   >
     <c:set var="latestRelease" value="1.90.0" />
     <c:if test="${
@@ -52,7 +52,11 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
         artifactId="@{documented.artifactId}"
         repository="@{nexusUrl}content/repositories/snapshots/"
         scmUrl="@{project.scm.url}"
-      />
+      >
+        <ul>
+          <li>Added script support for <ao:a href="https://oss.aoapps.com/web-resources/">AO Web Resources</ao:a>.</li>
+        </ul>
+      </changelog:release>
     </c:if>
 
     <changelog:release
