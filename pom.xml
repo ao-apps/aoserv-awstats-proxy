@@ -29,7 +29,7 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
     <relativePath>../../oss/parent/pom.xml</relativePath>
   </parent>
 
-  <groupId>com.aoindustries</groupId><artifactId>aoserv-awstats-proxy</artifactId><version>1.92.0-SNAPSHOT</version>
+  <groupId>com.aoindustries</groupId><artifactId>aoserv-awstats-proxy</artifactId><version>1.92.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
   <properties>
@@ -298,7 +298,7 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
         <groupId>com.aoapps</groupId><artifactId>ao-web-resources-taglib</artifactId><version>0.6.0${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
-        <groupId>com.aoindustries</groupId><artifactId>aoserv-client</artifactId><version>1.92.0${POST-SNAPSHOT}</version>
+        <groupId>com.aoindustries</groupId><artifactId>aoserv-client</artifactId><version>1.92.1-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <dependency>
         <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId><version>3.1.0</version>
