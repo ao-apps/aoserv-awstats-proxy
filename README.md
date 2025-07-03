@@ -22,7 +22,7 @@ Webapp that publishes [AWStats](https://awstats.sourceforge.io/) reports from th
 * [Project Home](https://aoindustries.com/aoserv/awstats-proxy/)
 * [Changelog](https://aoindustries.com/aoserv/awstats-proxy/changelog)
 * [API Docs](https://aoindustries.com/aoserv/awstats-proxy/apidocs/)
-* [Maven Central Repository](https://central.sonatype.com/artifact/com.aoindustries/aoserv-awstats-proxy)
+* [Central Repository](https://central.sonatype.com/artifact/com.aoindustries/aoserv-awstats-proxy)
 * [GitHub](https://github.com/ao-apps/aoserv-awstats-proxy)
 
 ## Contact Us

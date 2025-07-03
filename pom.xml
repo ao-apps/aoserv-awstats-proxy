@@ -43,9 +43,6 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
     <!-- AWStats access -->
     <com.aoindustries.aoserv.awstats.proxy.Connector.username />
     <com.aoindustries.aoserv.awstats.proxy.Connector.password />
-    <!-- com.aoindustries is on original Sonatype Nexus Repository Manager -->
-    <nexusServerId>ossrh-aoindustries</nexusServerId>
-    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
     <!-- SonarQube -->
     <sonar.projectKey>com.aoapps.platform:aoapps-awstats-proxy<!-- TODO: ${project.groupId}:${project.artifactId} --></sonar.projectKey>
     <!-- TODO: Implement tests -->
@@ -108,9 +105,9 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
   <repositories>
     <!-- Repository required here, too, so can find parent -->
     <repository>
-      <id>sonatype-nexus-snapshots-s01</id>
-      <name>Sonatype Nexus Snapshots S01</name>
-      <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+      <id>central-snapshots</id>
+      <name>Central Snapshot Repository</name>
+      <url>https://central.sonatype.com/repository/maven-snapshots/</url>
       <releases>
         <enabled>false</enabled>
       </releases>
