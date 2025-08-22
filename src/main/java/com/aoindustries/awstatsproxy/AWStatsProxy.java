@@ -217,8 +217,8 @@ public class AWStatsProxy extends HttpServlet {
         if (path.endsWith(".pl")) {
           contentType = ContentType.HTML;
           charset = StandardCharsets.UTF_8;
-          //} else if (path.endsWith(".gif")) {
-          //  contentType=ContentType.GIF;
+          // } else if (path.endsWith(".gif")) {
+          //   contentType=ContentType.GIF;
         } else if (path.endsWith(".png")) {
           contentType = ContentType.PNG;
           charset = null;
