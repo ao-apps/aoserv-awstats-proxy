@@ -44,7 +44,7 @@ along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
 
     <description.html><![CDATA[Documentation for <a target="${javadoc.target}" href="${project.url}">${documented.name}</a> in <a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> format.]]></description.html>
     <!-- SonarQube -->
-    <sonar.projectKey>com.aoapps.platform:aoapps-awstats-proxy-book<!-- TODO: ${project.groupId}:${project.artifactId} --></sonar.projectKey>
+    <sonar.projectKey>com.aoapps.platform:aoapps-awstats-proxy-book:javaee<!-- TODO: ${project.groupId}:${project.artifactId}:javaee --></sonar.projectKey>
   </properties>
 
   <name>AOServ AWStats Proxy Book</name>
