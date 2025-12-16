@@ -7,14 +7,14 @@
 [![java ee: &gt;= 7](https://aoindustries.com/ao-badges/javaee-7.svg)](https://docs.oracle.com/javaee/7/)
 [![license: LGPL v3](https://aoindustries.com/ao-badges/license-lgpl-3.0.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
-[![Build](https://github.com/ao-apps/aoserv-awstats-proxy/actions/workflows/build.yml/badge.svg?branch=javaee)](https://github.com/ao-apps/aoserv-awstats-proxy/actions?query=workflow%3ABuild)
+[![Build](https://github.com/ao-apps/aoserv-awstats-proxy/actions/workflows/build.yml/badge.svg?branch=jakartaee)](https://github.com/ao-apps/aoserv-awstats-proxy/actions?query=workflow%3ABuild)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.aoindustries/aoserv-awstats-proxy/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.aoindustries/aoserv-awstats-proxy)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?branch=javaee&project=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=alert_status)](https://sonarcloud.io/dashboard?branch=javaee&id=com.aoapps.platform%3Aaoapps-awstats-proxy)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?branch=javaee&project=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=ncloc)](https://sonarcloud.io/component_measures?branch=javaee&id=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=ncloc)  
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?branch=javaee&project=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=reliability_rating)](https://sonarcloud.io/component_measures?branch=javaee&id=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=Reliability)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?branch=javaee&project=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=security_rating)](https://sonarcloud.io/component_measures?branch=javaee&id=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=Security)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?branch=javaee&project=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=sqale_rating)](https://sonarcloud.io/component_measures?branch=javaee&id=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=Maintainability)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?branch=javaee&project=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=coverage)](https://sonarcloud.io/component_measures?branch=javaee&id=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=Coverage)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?branch=jakartaee&project=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=alert_status)](https://sonarcloud.io/dashboard?branch=jakartaee&id=com.aoapps.platform%3Aaoapps-awstats-proxy)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?branch=jakartaee&project=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=ncloc)](https://sonarcloud.io/component_measures?branch=jakartaee&id=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=ncloc)  
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?branch=jakartaee&project=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=reliability_rating)](https://sonarcloud.io/component_measures?branch=jakartaee&id=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=Reliability)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?branch=jakartaee&project=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=security_rating)](https://sonarcloud.io/component_measures?branch=jakartaee&id=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=Security)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?branch=jakartaee&project=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=sqale_rating)](https://sonarcloud.io/component_measures?branch=jakartaee&id=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=Maintainability)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?branch=jakartaee&project=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=coverage)](https://sonarcloud.io/component_measures?branch=jakartaee&id=com.aoapps.platform%3Aaoapps-awstats-proxy&metric=Coverage)
 
 Webapp that publishes [AWStats](https://awstats.sourceforge.io/) reports from the [AOServ Platform](https://aoindustries.com/aoserv/).
 
