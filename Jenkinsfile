@@ -46,7 +46,7 @@ def upstreamProjects = [
 
   // Runtime Direct
   '../oss/error-pages-javaee', // <groupId>com.aoapps</groupId><artifactId>ao-error-pages</artifactId>
-  '../oss/mime-mappings', // <groupId>com.aoapps</groupId><artifactId>ao-mime-mappings</artifactId>
+  '../oss/mime-mappings-javaee', // <groupId>com.aoapps</groupId><artifactId>ao-mime-mappings</artifactId>
   '../oss/servlet-filter-javaee', // <groupId>com.aoapps</groupId><artifactId>ao-servlet-filter</artifactId>
   '../oss/style-javaee', // <groupId>com.aoapps</groupId><artifactId>ao-style</artifactId>
   // No Jenkins: <groupId>org.apache.taglibs</groupId><artifactId>taglibs-standard-impl</artifactId>
