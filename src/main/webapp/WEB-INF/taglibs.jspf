@@ -1,6 +1,6 @@
 <%--
 aoserv-awstats-proxy - Webapp that publishes AWStats reports from the AOServ Platform.
-Copyright (C) 2020, 2021, 2023  AO Industries, Inc.
+Copyright (C) 2020, 2021, 2023, 2025, 2026  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -21,11 +21,11 @@ You should have received a copy of the GNU Lesser General Public License
 along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
 --%><%@ page language="java" pageEncoding="UTF-8"
 %><%-- JSTL 1.2
---%><%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"
-%><%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml"
-%><%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"
-%><%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"
-%><%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"
+--%><%@ taglib prefix="c" uri="jakarta.tags.core"
+%><%@ taglib prefix="x" uri="jakarta.tags.xml"
+%><%@ taglib prefix="fmt" uri="jakarta.tags.fmt"
+%><%@ taglib prefix="sql" uri="jakarta.tags.sql"
+%><%@ taglib prefix="fn" uri="jakarta.tags.functions"
 %><%-- AO Taglib
 --%><%@ taglib prefix="ao" uri="https://oss.aoapps.com/taglib/"
 %><%-- AO Web Resources Taglib

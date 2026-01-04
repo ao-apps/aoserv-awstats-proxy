@@ -1,6 +1,6 @@
 /*
  * aoserv-awstats-proxy - Webapp that publishes AWStats reports from the AOServ Platform.
- * Copyright (C) 2006-2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2006-2020, 2021, 2022, 2025, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -35,6 +35,12 @@ import com.aoindustries.aoserv.client.SslConnector;
 import com.aoindustries.aoserv.client.TcpConnector;
 import com.aoindustries.aoserv.client.account.User;
 import com.aoindustries.aoserv.client.web.Site;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
@@ -44,12 +50,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * Provides access to AWStats files.
