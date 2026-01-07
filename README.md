@@ -4,7 +4,7 @@
 [![management: production](https://aoindustries.com/ao-badges/management-production.svg)](https://aoindustries.com/life-cycle#management-production)
 [![packaging: active](https://aoindustries.com/ao-badges/packaging-active.svg)](https://aoindustries.com/life-cycle#packaging-active)  
 [![java: &gt;= 11](https://aoindustries.com/ao-badges/java-11.svg)](https://docs.oracle.com/en/java/javase/11/)
-[![java ee: &gt;= 7](https://aoindustries.com/ao-badges/javaee-7.svg)](https://docs.oracle.com/javaee/7/)
+[![jakarta ee: &gt;= 10](https://aoindustries.com/ao-badges/jakartaee-10.svg)](https://jakarta.ee/release/10/)
 [![license: LGPL v3](https://aoindustries.com/ao-badges/license-lgpl-3.0.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
 [![Build](https://github.com/ao-apps/aoserv-awstats-proxy/actions/workflows/build.yml/badge.svg?branch=jakartaee)](https://github.com/ao-apps/aoserv-awstats-proxy/actions?query=workflow%3ABuild)
