@@ -1,8 +1,8 @@
 # [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://github.com/ao-apps) [AOServ](https://aoindustries.com/aoserv/) / [AWStats Proxy](https://github.com/ao-apps/aoserv-awstats-proxy)
 
-[![project: current stable](https://aoindustries.com/ao-badges/project-current-stable.svg)](https://aoindustries.com/life-cycle#project-current-stable)
-[![management: production](https://aoindustries.com/ao-badges/management-production.svg)](https://aoindustries.com/life-cycle#management-production)
-[![packaging: active](https://aoindustries.com/ao-badges/packaging-active.svg)](https://aoindustries.com/life-cycle#packaging-active)  
+[![project: end of life](https://oss.aoapps.com/ao-badges/project-end-of-life.svg)](https://aoindustries.com/life-cycle#project-end-of-life)
+[![management: cleanup](https://oss.aoapps.com/ao-badges/management-cleanup.svg)](https://aoindustries.com/life-cycle#management-cleanup)
+[![packaging: unsupported](https://oss.aoapps.com/ao-badges/packaging-unsupported.svg)](https://aoindustries.com/life-cycle#packaging-unsupported)  
 [![java: &gt;= 11](https://aoindustries.com/ao-badges/java-11.svg)](https://docs.oracle.com/en/java/javase/11/)
 [![java ee: &gt;= 7](https://aoindustries.com/ao-badges/javaee-7.svg)](https://docs.oracle.com/javaee/7/)
 [![license: LGPL v3](https://aoindustries.com/ao-badges/license-lgpl-3.0.svg)](https://www.gnu.org/licenses/lgpl-3.0)
