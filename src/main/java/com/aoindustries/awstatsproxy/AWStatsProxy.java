@@ -209,8 +209,6 @@ public class AWStatsProxy extends HttpServlet {
           path = "awstats.pl";
         }
 
-        String queryString = request.getQueryString();
-
         // Determine content type
         String contentType;
         Charset charset;
@@ -233,7 +231,7 @@ public class AWStatsProxy extends HttpServlet {
           response.setCharacterEncoding(charset.name());
         }
         try (OutputStream out = response.getOutputStream()) {
-          site.getAwstatsFile(path, queryString, out);
+          site.getAwstatsFile(path, request.getQueryString(), out);
         }
       }
     } catch (SQLException err) {
