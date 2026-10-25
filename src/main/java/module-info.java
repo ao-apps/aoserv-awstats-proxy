@@ -21,7 +21,6 @@
  * along with aoserv-awstats-proxy.  If not, see <https://www.gnu.org/licenses/>.
  */
 module com.aoindustries.awstatsproxy {
-  exports com.aoindustries.awstatsproxy;
   // Direct
   requires com.aoapps.hodgepodge; // <groupId>com.aoapps</groupId><artifactId>ao-hodgepodge</artifactId>
   requires com.aoapps.lang; // <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId>
@@ -35,4 +34,6 @@ module com.aoindustries.awstatsproxy {
   // Java SE
   requires java.logging;
   requires java.sql;
+
+  exports com.aoindustries.awstatsproxy;
 }
