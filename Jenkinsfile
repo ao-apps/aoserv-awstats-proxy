@@ -57,6 +57,7 @@ binding.setVariable('upstreamProjects', [
 
 // This project's releases are downloaded and installed to client's webapps folders.
 // Also audit release branch on each build.
+// Note: These branches are added as additional build triggers
 binding.setVariable('scmAdditionalAuditBranches', 'release')
 
 /******************************************************************************************
