@@ -55,6 +55,10 @@ binding.setVariable('upstreamProjects', [
   '../oss/jakartaee-web-profile-bom', // <groupId>com.aoapps</groupId><artifactId>jakartaee-web-profile-bom</artifactId>
 ])
 
+// This project's releases are downloaded and installed to client's webapps folders.
+// Also audit release branch on each build.
+binding.setVariable('scmAdditionalAuditBranches', 'release')
+
 /******************************************************************************************
  *                                                                                        *
  * Everything below this line is identical for all projects, except the copied matrix     *
